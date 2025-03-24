@@ -1,18 +1,30 @@
-from gui.pyqt6_form import run as pyqt6_run
-from gui.tkinter_form import create_form as tkinter_run
-from gui.kivy_form import run as kivy_run
+import sys
+from gui.tkinter_form import create_form as tkinter_form
+
+from gui.pyqt_form import create_form as pyqt_form
+from gui.kivy_form import create_form as kivy_form
+from gui.wx_form import create_form as wx_form  # Импортируем функцию для wxPython
 
 def main():
-    choice = input("Choose framework (1: PyQt6, 2: Tkinter, 3: Kivy): ")
+    print("Выберите фреймворк:")
+    print("1. Tkinter")
+    print("2. PyQt6")
+    print("3. Kivy")
+    print("4. wxPython")  # Добавляем выбор для wxPython
+
+    choice = input("Введите номер фреймворка (1/2/3/4): ")
 
     if choice == '1':
-        pyqt6_run()
+        tkinter_form()
     elif choice == '2':
-        tkinter_run()
+        pyqt_form()
     elif choice == '3':
-        kivy_run()
+        kivy_form()
+    elif choice == '4':
+        wx_form()  # Запускаем wxPython форму
     else:
-        print("Invalid choice!")
+        print("Неверный выбор!")
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()

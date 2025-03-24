@@ -1,2 +1,6 @@
 PyQt6
 Kivy
+yt-dlp
+tk
+kivy
+wxPython
