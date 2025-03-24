@@ -1,3 +1,5 @@
+#Ver=0.1
+
 import sys
 from gui.tkinter_form import create_form as tkinter_form
 
